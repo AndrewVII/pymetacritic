@@ -1,2 +1,2 @@
 # pymetacritic
-A package to get album scores from metacritic
+A package to get album scores from metacritic.
