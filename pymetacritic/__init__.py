@@ -1,0 +1,1 @@
+from pymetacritic import Album
