@@ -19,10 +19,11 @@ class Album():
     """
 
     def __init__(self, album_name):
-        self.name = album_name
+        self.name = None
         self.link = None
         self.critic_score = None
         self.user_score = None
+        self.set_album_name(album_name)
         self.get_album_data()
 
     def get_album_data(self):
@@ -63,5 +64,19 @@ class Album():
         Arguments:
             new_album_name {string} -- name of the new album
         """
-        self.name = str(new_album_name)
+        self.set_album_name(new_album_name)
         self.get_album_data()
+
+    def set_album_name(self, album_name):
+        """Formats and sets the album name
+
+        Arguments:
+            album_name {string} -- album name to be formatted and set
+        """
+        alphnum = 'abcdefghijklmnopqrstuvwxyz 1234567890'
+        self.name = ''
+        for cur_letter in album_name.lower():
+            if cur_letter in alphnum:
+                self.name += cur_letter
+
+        self.name = '-'.join(self.name.split('-'))
